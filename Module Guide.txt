@@ -1,0 +1,11 @@
+Grow and Shrink Update
+1. Added functions on Paddle.lua
+2. Added callings on PlayState when a player lost a life and got a certain score
+
+Multiple Balls Update
+1. Compose a powerup class framing ball or paddle.
+2. Add a quad function for powerups on Util.lua
+3. Declare it on main.lua 
+4. Modify logics that includes self.ball on PlayState.lua, because you now have a table of balls.
+
+
