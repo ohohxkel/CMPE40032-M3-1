@@ -99,8 +99,7 @@ function PlayState:update(dt)
     end
 
 
-   -- M3: Changed if self.ball:collides(self.paddle) then to for loop since you have a table
-   
+   -- M3: Add for loop for table of balls.
    for b, ball in pairs(self.balls) do
         if self.balls[b]:collides(self.paddle) then
             -- raise ball above paddle in case it goes below it, then reverse dy
@@ -141,6 +140,8 @@ function PlayState:update(dt)
                     self.onScore = self.score
                 end
 
+                --M3:   If the ball collided with a locked brick, and the key powerup was obtained then
+                --      the locked brick can be remove from play as well as removing the key on the table. 
                 if brick.locked == true and self.keys[1] ~= nil then
                     brick.locked = false
                     table.remove(self.keys)
@@ -274,7 +275,7 @@ function PlayState:update(dt)
             table.remove(self.ballPowerups, b)
             table.insert(self.balls, addBall(self.balls[1]))
             table.insert(self.balls, addBall(self.balls[1]))
-            gSounds['paddle-hit']:play()
+            gSounds['powerup']:play()
         end
     end
 
@@ -282,7 +283,7 @@ function PlayState:update(dt)
         if self.keysPowerups[k]:collides(self.paddle) then
             table.remove(self.keysPowerups, k)
             table.insert(self.keys, addKey())
-            gSounds['paddle-hit']:play()
+            gSounds['powerup']:play()
         end
     end
 
@@ -340,7 +341,7 @@ function PlayState:render()
 
     renderScore(self.score)
     renderHealth(self.health)
-    renderKeys(#self.keys)
+    renderKey(#self.keys)
 
     -- pause text, if paused
     if self.paused then

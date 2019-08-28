@@ -149,7 +149,7 @@ function addBall(firstBall)
     return ball
 end
 
---M3: Key
+--M3: Functions to spawn powerups for PlayState.
 function addKey()
     local powerup = Powerup()
     powerup.type = 'key'

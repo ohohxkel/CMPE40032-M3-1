@@ -49,7 +49,7 @@ function love.load()
 
     -- load up the graphics we'll be using throughout our states
     gTextures = {
-        ['background'] = love.graphics.newImage('graphics/background.png'),
+        ['background'] = love.graphics.newImage('graphics/background-space.jpg'),
         ['main'] = love.graphics.newImage('graphics/Arkanoid.png'),
         ['arrows'] = love.graphics.newImage('graphics/arrows.png'),
         ['hearts'] = love.graphics.newImage('graphics/hearts.png'),
@@ -97,7 +97,9 @@ function love.load()
         ['high-score'] = love.audio.newSource('sounds/high_score.wav'),
         ['pause'] = love.audio.newSource('sounds/pause.wav'),
 
-        ['music'] = love.audio.newSource('sounds/music.wav')
+        ['music'] = love.audio.newSource('sounds/music.wav'),
+        --M3: Powerup obtainment sfx
+        ['powerup'] = love.audio.newSource('sounds/powerup.wav')
     }
 
     -- the state machine we'll be using to transition between various states
@@ -287,7 +289,7 @@ function renderHealth(health)
 end
 
 --M3: Render Key
-function renderKeys(keys)
+function renderKey(keys)
     -- start of our health rendering
     local keyX = VIRTUAL_WIDTH - 140
     local keyHeight = gTextures['key']:getHeight() 
