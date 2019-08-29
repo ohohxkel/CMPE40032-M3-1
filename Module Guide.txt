@@ -3,7 +3,7 @@ Grow and Shrink Update
 2. Added callings on PlayState when a player lost a life and got a certain score
 
 Multiple Balls Update
-1. Compose a powerup class framing ball or paddle.
+1. Compose a powerup class framing ball or paddle. Initialize it on Dependencies.lua by requiring it. 
 2. Add a quad function for powerups on Util.lua
 3. Declare it on main.lua 
 4. Modify logics that includes self.ball on PlayState.lua, because you now have a table of balls.
@@ -21,6 +21,9 @@ Locked Bricks Update
 	-Modify the collision logics by adding for loops since it's now a table
 8. Optional: Render a key icon whenever you obtained the key powerup. I've imported a png named key.png,and it will appear near the hearts by making a function on main.lua framing like the renderHearts function. 
 
+
+
+JMRC
 
 
 
